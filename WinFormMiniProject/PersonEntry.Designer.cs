@@ -30,12 +30,14 @@
         {
             firstNameLabel = new Label();
             firstNameTextBox = new TextBox();
-            textBox1 = new TextBox();
+            lastNameText = new TextBox();
             checkboxLabel = new Label();
-            activeCheckBox = new CheckBox();
+            isActive = new CheckBox();
             addressesLabel = new Label();
-            listBox1 = new ListBox();
+            addressesList = new ListBox();
             button1 = new Button();
+            saveButton = new Button();
+            lastNameLabel = new Label();
             SuspendLayout();
             // 
             // firstNameLabel
@@ -54,12 +56,12 @@
             firstNameTextBox.Size = new Size(224, 39);
             firstNameTextBox.TabIndex = 1;
             // 
-            // textBox1
+            // lastNameText
             // 
-            textBox1.Location = new Point(150, 55);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(224, 39);
-            textBox1.TabIndex = 1;
+            lastNameText.Location = new Point(150, 55);
+            lastNameText.Name = "lastNameText";
+            lastNameText.Size = new Size(224, 39);
+            lastNameText.TabIndex = 2;
             // 
             // checkboxLabel
             // 
@@ -70,14 +72,14 @@
             checkboxLabel.TabIndex = 2;
             checkboxLabel.Text = "Active";
             // 
-            // activeCheckBox
+            // isActive
             // 
-            activeCheckBox.AutoSize = true;
-            activeCheckBox.Location = new Point(150, 125);
-            activeCheckBox.Name = "activeCheckBox";
-            activeCheckBox.Size = new Size(15, 14);
-            activeCheckBox.TabIndex = 3;
-            activeCheckBox.UseVisualStyleBackColor = true;
+            isActive.AutoSize = true;
+            isActive.Location = new Point(150, 125);
+            isActive.Name = "isActive";
+            isActive.Size = new Size(15, 14);
+            isActive.TabIndex = 3;
+            isActive.UseVisualStyleBackColor = true;
             // 
             // addressesLabel
             // 
@@ -88,40 +90,63 @@
             addressesLabel.TabIndex = 4;
             addressesLabel.Text = "Addresses";
             // 
-            // listBox1
+            // addressesList
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(15, 209);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(359, 228);
-            listBox1.TabIndex = 5;
+            addressesList.FormattingEnabled = true;
+            addressesList.Location = new Point(15, 209);
+            addressesList.Name = "addressesList";
+            addressesList.Size = new Size(539, 228);
+            addressesList.TabIndex = 6;
+            addressesList.TabStop = false;
             // 
             // button1
             // 
-            button1.Location = new Point(299, 167);
+            button1.Location = new Point(479, 170);
             button1.Name = "button1";
             button1.Size = new Size(75, 36);
-            button1.TabIndex = 6;
+            button1.TabIndex = 4;
             button1.Text = "Add";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // saveButton
+            // 
+            saveButton.Location = new Point(182, 452);
+            saveButton.Name = "saveButton";
+            saveButton.Size = new Size(212, 42);
+            saveButton.TabIndex = 5;
+            saveButton.Text = "Save";
+            saveButton.UseVisualStyleBackColor = true;
+            saveButton.Click += saveButton_Click;
+            // 
+            // lastNameLabel
+            // 
+            lastNameLabel.AutoSize = true;
+            lastNameLabel.Location = new Point(15, 62);
+            lastNameLabel.Name = "lastNameLabel";
+            lastNameLabel.Size = new Size(126, 32);
+            lastNameLabel.TabIndex = 0;
+            lastNameLabel.Text = "Last Name";
             // 
             // PersonEntry
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(423, 475);
+            ClientSize = new Size(566, 506);
+            Controls.Add(saveButton);
             Controls.Add(button1);
-            Controls.Add(listBox1);
+            Controls.Add(addressesList);
             Controls.Add(addressesLabel);
-            Controls.Add(activeCheckBox);
+            Controls.Add(isActive);
             Controls.Add(checkboxLabel);
-            Controls.Add(textBox1);
+            Controls.Add(lastNameText);
             Controls.Add(firstNameTextBox);
+            Controls.Add(lastNameLabel);
             Controls.Add(firstNameLabel);
             Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Margin = new Padding(6, 6, 6, 6);
+            Margin = new Padding(6);
             Name = "PersonEntry";
-            Text = "Form1";
+            Text = "Person Entry";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -130,11 +155,13 @@
 
         private Label firstNameLabel;
         private TextBox firstNameTextBox;
-        private TextBox textBox1;
+        private TextBox lastNameText;
         private Label checkboxLabel;
-        private CheckBox activeCheckBox;
+        private CheckBox isActive;
         private Label addressesLabel;
-        private ListBox listBox1;
+        private ListBox addressesList;
         private Button button1;
+        private Button saveButton;
+        private Label lastNameLabel;
     }
 }
